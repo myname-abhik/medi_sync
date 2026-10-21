@@ -1,0 +1,208 @@
+.background {
+  position: relative;
+  background-image: url('../assets/medicine.png'); /* Add your image path */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3a59a6ce;
+}
+
+
+.searchContainer {
+  width: 100%;
+  height: 248.52px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.searchText {
+  margin-bottom: 20px;
+  color: #FFF;
+  font-family: "Maven Pro";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  width: 773px;
+  height: 65px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 10px;
+  background-color: #fff;
+ 
+}
+
+
+.searchBar input[type="text"] {
+  flex-grow: 1;
+  height: 100%;
+  text-decoration: none;
+  border: none;
+  padding-left: 10px;
+  border-radius: 10px 0 0 10px;
+}
+.searchBar input[type="text"]:focus {
+  outline: none; /* Remove default outline */
+  border-color: transparent; /* Set border color to transparent */
+  box-shadow: none; /* Remove any box shadow */
+}
+
+.searchBar .searchIcon {
+  
+  font-size: 30px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.icon{
+  color: azure;
+  font-size: 28px;
+  
+}
+
+.searchBar .filterButton {
+  width: 94px; /* Fixed width */
+  height: 46px; /* Fixed height */
+  top: 241px;
+  left: 962px;
+  padding: 15px 25px; /* Padding adjusted */
+  gap: 10px;
+  border-radius: 5px 0 0 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 10px; /* Optional: Add some space between buttons */
+}
+
+
+/* Parent container to center the cardContainer */
+.cardContainerWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px; /* Optional: Adjust padding as needed */
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 287px;
+  height: 434px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card .meeting {
+  color: #004EB5;
+  font-family: "Maven Pro";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+
+.askButton {
+  /* Your styles for the "Ask Me" button */
+  width: 150px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  padding: 7px 20px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  font-size: var(--button-font-size);
+  color: var(--font-dark-color-2);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  transition: var(--transition);
+}
+.askButton:hover {
+  /* Styles for the button when hovered */
+  background-color: var(--secondary-color);
+  color: white; /* Change text color */
+}
+
+.cardimg {
+  /* background-image: url('../assets/Profile-Doctor.png'); */
+  width: 247px;
+  height: 255px;
+  border-radius: 10px;
+  background-size: cover; /* Adjusts the background image to cover the entire container */
+  background-position: center; 
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.cardimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card h2 {
+  margin-top: 0;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  max-width: 1000px;
+  overflow: hidden;
+}
+
+.card p {
+  margin-bottom: 0;
+}
+
+.unavailable,
+.unavailable:hover {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--primary-color);
+}
+.chipRow {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 25px 0 5px;
+}
+.chip {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 2px solid var(--primary-color);
+  background: #fff;
+  color: var(--primary-dark-color);
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.chip.chipActive { background: var(--primary-dark-color); border-color: var(--primary-dark-color); color: #fff; }
+@media (max-width: 1300px) { .cardContainer { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 1000px) { .cardContainer { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 680px) { .cardContainer { grid-template-columns: 1fr; justify-items: center; } .searchBar { width: 92vw; } }

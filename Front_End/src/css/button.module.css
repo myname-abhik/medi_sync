@@ -1,0 +1,46 @@
+.button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  font-size: var(--button-font-size);
+  color: var(--font-dark-color-2);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  transition: var(--transition);
+}
+.button:hover{
+    background-color: var(--secondary-color);
+}
+
+/* ========= Button Responsive ( RESPONSIVE ) ========= */
+@media only screen and (max-width: 1100px)
+{
+    .button{
+        /* padding: 8px 16px; */
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 800px)
+{
+    .button{
+        /* padding: 8px 16px; */
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 700px)
+{
+    .button{
+        /* padding: 8px 16px; */
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 550px)
+{
+    .button{
+        /* padding: 8px 16px; */
+        font-size: 16px;
+    }
+}

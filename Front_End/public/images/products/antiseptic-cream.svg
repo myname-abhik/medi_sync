@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="antiseptic cream"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6f7ef"/><stop offset="1" stop-color="#c9ecdb"/></linearGradient></defs><rect width="400" height="400" fill="url(#bg)"/><ellipse cx="200" cy="338" rx="125" ry="13" fill="#00224F" opacity=".13"/><path d="M150 120 h100 l-8 190 q-1 14 -14 14 h-56 q-13 0 -14 -14z" fill="#2fb67a"/>
+<path d="M150 120 h100 l-3 34 h-94z" fill="#fff" opacity=".2"/>
+<rect x="168" y="76" width="64" height="48" rx="8" fill="#00224F"/>
+<rect x="160" y="196" width="80" height="72" rx="8" fill="#fff"/>
+<path d="M180.33333333333334 211.0h7.333333333333333v7.333333333333334h7.333333333333334v7.333333333333333h-7.333333333333334v7.333333333333334h-7.333333333333333v-7.333333333333334h-7.333333333333334v-7.333333333333333h7.333333333333334z" fill="#3DBDEC"/>
+<text x="200" y="226" font-family="sans-serif" font-size="14" font-weight="700" fill="#00224F">Antiseptic</text>
+<rect x="172" y="248" width="56" height="5" rx="2.5" fill="#85dbfa"/></svg>

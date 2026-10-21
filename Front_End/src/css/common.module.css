@@ -1,0 +1,82 @@
+/* Shared building blocks for the account pages (notifications, prescriptions, empty states...) */
+.page {
+  max-width: 1000px;
+  min-height: 60vh;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+.pageHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.pageTitle {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary-dark-color);
+}
+.pageSub {
+  color: #4a5a78;
+  font-size: 18px;
+  margin-top: 4px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ghostBtn {
+  padding: 10px 18px;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  background: transparent;
+  color: var(--primary-dark-color);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.ghostBtn:hover:not(:disabled) {
+  background: var(--secondary-color);
+}
+.ghostBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.dangerBtn {
+  color: #b42318;
+  border-color: #f0b4af;
+}
+.dangerBtn:hover:not(:disabled) {
+  background: #fdecec;
+}
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 60px 20px;
+  text-align: center;
+  color: #4a5a78;
+  font-size: 20px;
+}
+.empty h2 {
+  font-size: 28px;
+  color: var(--primary-dark-color);
+}
+.notice {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 17px;
+}
+.notice.error {
+  background: #fdecec;
+  color: #9f1c13;
+}
+.notice.success {
+  background: #e6f7ef;
+  color: #11603a;
+}

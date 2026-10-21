@@ -1,0 +1,25 @@
+.error {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: #fdecec;
+  color: #9f1c13;
+  font-size: 16px;
+}
+.hint {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: var(--background-light-color);
+  color: var(--primary-dark-color);
+  font-size: 15px;
+  text-align: center;
+}
+.hint button {
+  background: none;
+  border: none;
+  color: var(--border-color);
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}

@@ -1,0 +1,141 @@
+.hero1 {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    
+}
+
+.hero1 .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.hero1 .imageBg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #3a59a6ce;
+    z-index: 10;
+}
+
+.hero1 .imageText {
+    width: 670px;
+    height: 100%;
+    margin-left: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: auto;
+    margin-bottom: auto;
+    /* background-color: green; */
+}
+
+.hero1 .imageText h1 {
+    font-size: 65px;
+    font-weight: 900;
+    color: var(--white-color);
+
+}
+
+.hero1 .imageText p {
+    font-size: 20px;
+    color: var(--white-color);
+    margin-top: 20px;
+}
+
+.hero1 .imageText .heroBtn {
+    margin-top: 26px;
+    display: flex;
+    gap: 20px;
+}
+
+.heroCards {
+    padding: 62px;
+    color: #fff;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroCard1 {
+    width: 75%;
+    /* height: 23px; */
+    padding: 23px;
+    border-radius: 10px;
+    background-color: #0052bf;
+    display: flex;
+}
+
+.heroCard1Part1 {
+    width: 50%;
+    height: 280px;
+    padding: 23px;
+    /* background-color: red; */
+    border-right: 0.2rem solid #097bdd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroCard1Part2 {
+    width: 50%;
+    height: 280px;
+    padding: 23px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroCard2 {
+    width: 40%;
+}
+
+.heroCardsIcon {
+    margin-bottom: 20px;
+}
+
+.paraIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.paraIcon .icon {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.heroCards h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.heroCard2 {
+    height: 326px;
+    padding: 30px 20px;
+    /* background-color: red; */
+    border-radius: 10px;
+    box-shadow: 0px 0px 31.9px 0px rgba(0, 0, 0, 0.32);
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroCard2 h1 {
+    color: #000;
+}
+
+.heroCard2 p {
+    margin: 20px 0;
+}

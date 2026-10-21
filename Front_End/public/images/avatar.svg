@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Doctor portrait"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef1f7"/><stop offset="1" stop-color="#d9dfec"/></linearGradient></defs><rect width="400" height="400" fill="url(#bg)"/><circle cx="330" cy="70" r="46" fill="#fff" opacity=".35"/><path d="M60 400 q4 -96 90 -112 h100 q86 16 90 112z" fill="#fff"/>
+<path d="M150 288 l50 66 50 -66 q-26 -8 -50 -8 q-24 0 -50 8z" fill="#8aa0c0"/><path d="M150 288 l20 -4 30 56 -50 -52z M250 288 l-20 -4 -30 56 50 -52z" fill="#e7edf7"/>
+<rect x="178" y="236" width="44" height="56" rx="18" fill="#d9a47e"/><path d="M178 262 q22 22 44 0 v-10 h-44z" fill="#000" opacity=".08"/>
+
+<ellipse cx="200" cy="184" rx="58" ry="66" fill="#d9a47e"/>
+<path d="M142 168 q-4 -76 58 -78 q62 2 58 78 q-12 -34 -58 -36 q-46 2 -58 36z" fill="#2a1c14"/>
+<ellipse cx="143" cy="190" rx="8" ry="13" fill="#d9a47e"/><ellipse cx="257" cy="190" rx="8" ry="13" fill="#d9a47e"/>
+<g fill="#00224F"><ellipse cx="176" cy="188" rx="5" ry="6"/><ellipse cx="224" cy="188" rx="5" ry="6"/></g>
+<path d="M170 172 q6 -6 14 -2M216 170 q8 -4 14 2" stroke="#00224F" stroke-width="3" fill="none" stroke-linecap="round" opacity=".6"/>
+<path d="M200 192 q-5 14 2 18" stroke="#000" stroke-opacity=".18" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M180 222 q20 18 40 0" stroke="#00224F" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M156 300 q-16 50 24 62 q22 4 28 -16" stroke="#44546f" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="210" cy="348" r="11" fill="#b9c4d8" stroke="#44546f" stroke-width="4"/>
+<path d="M244 300 q16 46 -10 56" stroke="#44546f" stroke-width="5" fill="none" stroke-linecap="round"/></svg>

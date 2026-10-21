@@ -1,0 +1,119 @@
+.login{
+    /* background-color: red; */
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-image: url(loginBackground.png);
+    /* background-size: cover; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-left: 90px; */
+    padding-left: 20px;
+        padding-right: 20px;
+}
+.login::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff52;
+    backdrop-filter: blur(10px);
+}
+.loginForm{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    height: 450px;
+    width: 500px;
+    
+    background-color: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #0000005e;
+    padding: 20px;
+    /* padding-bottom: 30px; */
+    gap: 30px;
+}
+.loginTitle{
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--font-dark-color-2);
+    margin-bottom: 20px;
+    text-transform: capitalize;
+
+}
+.inputSection{
+    /* margin-top: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    width: 90%;
+}
+.loginForm button{
+    width: 100%;
+}
+
+.input{
+    /* background-color: red; */
+    width: 100%;
+    border: 2px solid var(--font-light-color);
+    padding: 10px;
+    outline: none;
+    border-radius: 5px;
+    font-size: 22px;
+    /* margin-top: 30px; */
+}
+
+.input:focus{
+    border: 2px solid var(--primary-color);
+}
+
+.loginFormText{
+    font-size: 15px;
+    color: var(--font-dark-color-2);
+    font-weight: 500;
+    /* text-transform: capitalize; */
+    text-align: center;
+}
+.register{
+    font-size: 15px;
+    color: var(--font-dark-color);
+    font-weight: 500;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.register:hover{
+    color: var(--primary-color);
+}
+
+/* ========= Login Page ( RESPONSIVE ) ========= */
+@media only screen and (max-width: 500px)
+{
+    .loginForm{
+        max-width: 500px;
+    }
+    
+}
+
+@media only screen and (max-width: 400px)
+{
+    .loginTitle
+    {
+        font-size: 30px;
+    }
+    .input{
+        font-size: 15px;
+    }
+    
+}

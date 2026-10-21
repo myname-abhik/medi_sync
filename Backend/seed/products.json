@@ -1,0 +1,146 @@
+[
+  {
+    "Product_Title": "Paracetamol 500 mg Tablets",
+    "Product_description": "Fast relief from fever, headache and mild body pain. Strip of 10 tablets.",
+    "Product_Image": "/images/products/paracetamol.svg",
+    "product_price": "2.40",
+    "product_Discount": "10%",
+    "category": "Pain & Fever",
+    "Product_available": {
+      "store_name": "Medisync Pharmacy",
+      "store_Id": "store-001"
+    }
+  },
+  {
+    "Product_Title": "Vitamin C 1000 mg Effervescent",
+    "Product_description": "Orange-flavoured fizzy tablets that support immunity. Tube of 20.",
+    "Product_Image": "/images/products/vitamin-c.svg",
+    "product_price": "7.90",
+    "product_Discount": "15%",
+    "category": "Vitamins",
+    "Product_available": {
+      "store_name": "Medisync Pharmacy",
+      "store_Id": "store-001"
+    }
+  },
+  {
+    "Product_Title": "Herbal Cough Syrup 100 ml",
+    "Product_description": "Soothes dry and wet cough with tulsi, honey and ginger. Non-drowsy.",
+    "Product_Image": "/images/products/cough-syrup.svg",
+    "product_price": "4.75",
+    "product_Discount": "5%",
+    "category": "Cold & Cough",
+    "Product_available": {
+      "store_name": "CareFirst Chemist",
+      "store_Id": "store-002"
+    }
+  },
+  {
+    "Product_Title": "Digital Thermometer",
+    "Product_description": "Reads body temperature in 10 seconds with a fever beep and memory recall.",
+    "Product_Image": "/images/products/thermometer.svg",
+    "product_price": "6.50",
+    "product_Discount": "20%",
+    "category": "Devices",
+    "Product_available": {
+      "store_name": "CareFirst Chemist",
+      "store_Id": "store-002"
+    }
+  },
+  {
+    "Product_Title": "Antiseptic Cream 30 g",
+    "Product_description": "Helps prevent infection in minor cuts, scrapes and burns.",
+    "Product_Image": "/images/products/antiseptic-cream.svg",
+    "product_price": "3.20",
+    "product_Discount": "0%",
+    "category": "First Aid",
+    "Product_available": {
+      "store_name": "Medisync Pharmacy",
+      "store_Id": "store-001"
+    }
+  },
+  {
+    "Product_Title": "Home First Aid Kit (60 pieces)",
+    "Product_description": "Bandages, gauze, tape, scissors, gloves and antiseptic wipes in a hard case.",
+    "Product_Image": "/images/products/first-aid-kit.svg",
+    "product_price": "18.00",
+    "product_Discount": "12%",
+    "category": "First Aid",
+    "Product_available": {
+      "store_name": "HealthHub Store",
+      "store_Id": "store-003"
+    }
+  },
+  {
+    "Product_Title": "Automatic Blood Pressure Monitor",
+    "Product_description": "Upper-arm cuff with irregular heartbeat detection and 90-reading memory.",
+    "Product_Image": "/images/products/bp-monitor.svg",
+    "product_price": "34.99",
+    "product_Discount": "25%",
+    "category": "Devices",
+    "Product_available": {
+      "store_name": "HealthHub Store",
+      "store_Id": "store-003"
+    }
+  },
+  {
+    "Product_Title": "N95 Respirator Masks (10 pack)",
+    "Product_description": "5-layer filtration, adjustable nose clip and soft ear loops.",
+    "Product_Image": "/images/products/n95-masks.svg",
+    "product_price": "9.50",
+    "product_Discount": "8%",
+    "category": "Protection",
+    "Product_available": {
+      "store_name": "Medisync Pharmacy",
+      "store_Id": "store-001"
+    }
+  },
+  {
+    "Product_Title": "Hand Sanitizer 250 ml",
+    "Product_description": "70% alcohol gel with aloe vera. Pump bottle.",
+    "Product_Image": "/images/products/hand-sanitizer.svg",
+    "product_price": "2.80",
+    "product_Discount": "0%",
+    "category": "Protection",
+    "Product_available": {
+      "store_name": "CareFirst Chemist",
+      "store_Id": "store-002"
+    }
+  },
+  {
+    "Product_Title": "Daily Multivitamin (60 capsules)",
+    "Product_description": "Covers 23 essential vitamins and minerals for adults. One capsule a day.",
+    "Product_Image": "/images/products/multivitamin.svg",
+    "product_price": "12.40",
+    "product_Discount": "18%",
+    "category": "Vitamins",
+    "Product_available": {
+      "store_name": "HealthHub Store",
+      "store_Id": "store-003"
+    }
+  },
+  {
+    "Product_Title": "Lubricating Eye Drops 10 ml",
+    "Product_description": "Relieves dryness and irritation from screens, dust and contact lenses.",
+    "Product_Image": "/images/products/eye-drops.svg",
+    "product_price": "5.10",
+    "product_Discount": "10%",
+    "category": "Eye & Ear",
+    "Product_available": {
+      "store_name": "CareFirst Chemist",
+      "store_Id": "store-002"
+    }
+  },
+  {
+    "Product_Title": "Fingertip Pulse Oximeter",
+    "Product_description": "Shows SpO2 and pulse rate on a bright OLED display. Includes lanyard.",
+    "Product_Image": "/images/products/pulse-oximeter.svg",
+    "product_price": "15.90",
+    "product_Discount": "22%",
+    "category": "Devices",
+    "Product_available": {
+      "store_name": "HealthHub Store",
+      "store_Id": "store-003"
+    }
+  }
+]

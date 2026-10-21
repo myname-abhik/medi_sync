@@ -1,0 +1,391 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  position: relative;
+  background-image: url('../assets/medicine.png');
+  /* Add your image path */
+  background-size: cover;
+  /* Cover the entire container */
+  background-position: center;
+  /* Center the image */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3a59a6ce;
+}
+
+
+.searchContainer {
+  width: 100%;
+  height: 248.52px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.searchText {
+  margin-bottom: 20px;
+  color: #FFF;
+  font-family: "Maven Pro";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  width: 773px;
+  height: 65px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 10px;
+  background-color: #fff;
+
+}
+
+
+.searchBar input[type="text"] {
+  flex-grow: 1;
+  height: 100%;
+  text-decoration: none;
+  border: none;
+  padding-left: 10px;
+  border-radius: 10px 0 0 10px;
+}
+
+.searchBar input[type="text"]:focus {
+  outline: none;
+  /* Remove default outline */
+  border-color: transparent;
+  /* Set border color to transparent */
+  box-shadow: none;
+  /* Remove any box shadow */
+}
+
+.searchBar .searchIcon {
+
+  font-size: 30px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.icon {
+  color: azure;
+  font-size: 28px;
+
+}
+
+.searchBar .filterButton {
+  width: 94px;
+  /* Fixed width */
+  height: 46px;
+  /* Fixed height */
+  top: 241px;
+  left: 962px;
+  padding: 15px 25px;
+  /* Padding adjusted */
+  gap: 10px;
+  border-radius: 5px 0 0 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 10px;
+  /* Optional: Add some space between buttons */
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+  padding: 30px;
+  /* width: 80vh; */
+  /* border:2px solid blue;
+     */
+  box-shadow: 0px 0px 31.9px 0px rgba(0, 0, 0, 0.32);
+  border-radius: 10px;
+}
+
+.pic {
+  width: 20%;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.txt {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px;
+  font-weight: 600;
+}
+
+.price {
+  width: 20%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 20px;
+  /* align-items: center; */
+  text-align: right;
+}
+
+.list {
+  list-style-type: disc;
+  margin: 10px;
+  padding: 10px;
+}
+
+ul {
+
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.medButton {
+  font-size: 25px;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.pricing {
+  display: flex;
+  justify-content: end;
+  font-weight: 600;
+  font-size: 20px;
+  align-items: right;
+}
+
+.dprice {
+  text-decoration: line-through;
+  color: grey;
+  padding-right: 20px;
+}
+
+.dperc {
+  color: blue;
+}
+
+.avltxt {
+  font-weight: 600;
+
+}
+
+/* ==================================== */
+.background {
+  position: relative;
+  background-image: url('../assets/medicine.png');
+  /* Add your image path */
+  background-size: cover;
+  /* Cover the entire container */
+  background-position: center;
+  /* Center the image */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3a59a6ce;
+}
+
+
+.searchContainer {
+  width: 100%;
+  height: 248.52px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.searchText {
+  margin-bottom: 20px;
+  color: #FFF;
+  font-family: "Maven Pro";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  width: 773px;
+  height: 65px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 10px;
+  background-color: #fff;
+
+}
+
+
+.searchBar input[type="text"] {
+  flex-grow: 1;
+  height: 100%;
+  text-decoration: none;
+  border: none;
+  padding-left: 10px;
+  border-radius: 10px 0 0 10px;
+}
+
+.searchBar input[type="text"]:focus {
+  outline: none;
+  /* Remove default outline */
+  border-color: transparent;
+  /* Set border color to transparent */
+  box-shadow: none;
+  /* Remove any box shadow */
+}
+
+.searchBar .searchIcon {
+
+  font-size: 30px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.icon {
+  color: azure;
+  font-size: 28px;
+
+}
+
+.searchBar .filterButton {
+  width: 94px;
+  /* Fixed width */
+  height: 46px;
+  /* Fixed height */
+  top: 241px;
+  left: 962px;
+  padding: 15px 25px;
+  /* Padding adjusted */
+  gap: 10px;
+  border-radius: 5px 0 0 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 10px;
+  /* Optional: Add some space between buttons */
+}
+/* ---- category chips + sort ---- */
+.toolbar {
+  max-width: 1200px;
+  margin: 25px auto 0;
+  padding: 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.chip {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 2px solid var(--primary-color);
+  background: #fff;
+  color: var(--primary-dark-color);
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.chip:hover { background: var(--secondary-color); }
+.chip.chipActive {
+  background: var(--primary-dark-color);
+  border-color: var(--primary-dark-color);
+  color: #fff;
+}
+.sort {
+  padding: 9px 12px;
+  border: 2px solid var(--primary-color);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--primary-dark-color);
+  font-size: 17px;
+}
+.resultCount {
+  max-width: 1200px;
+  margin: 12px auto 0;
+  padding: 0 30px;
+  color: #4a5a78;
+  font-size: 16px;
+}
+.storeBtn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  background: var(--primary-color);
+  color: var(--primary-dark-color);
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.storeBtn:hover { background: var(--secondary-color); }
+.offTxt { color: #11803f; font-weight: 600; }
+
+@media (max-width: 800px) {
+  .card { flex-direction: column; margin: 15px; padding: 15px; }
+  .pic, .txt, .price { width: 100%; text-align: left; }
+  .searchBar { width: 92vw; }
+}

@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medisync Admin</title>
+<style>
+:root{--blue:#3DBDEC;--navy:#00224F;--sky:#85dbfa;--bg:#f1fbff;--text:#0b1b33;--muted:#5b6b88;--line:#dbe6f3;--danger:#d92d20;--ok:#12805c}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Maven Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text)}
+button,input,select,textarea{font:inherit}
+.hidden{display:none!important}
+header{background:var(--navy);color:#fff;padding:14px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+header h1{font-size:22px;margin:0;flex:1}
+header h1 span{color:var(--sky);font-weight:400}
+.btn{border:0;border-radius:8px;padding:9px 16px;background:var(--blue);color:var(--navy);font-weight:700;cursor:pointer}
+.btn:hover{filter:brightness(1.07)}
+.btn.ghost{background:transparent;border:2px solid var(--blue);color:inherit}
+header .btn.ghost{color:#fff}
+.btn.danger{background:#fdecec;color:var(--danger)}
+.btn.sm{padding:5px 11px;font-size:14px}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+main{max-width:1180px;margin:0 auto;padding:24px 16px 60px}
+.login{max-width:440px;margin:10vh auto;background:#fff;padding:32px;border-radius:16px;box-shadow:0 8px 30px rgba(0,34,79,.15)}
+.login h2{margin:0 0 6px;color:var(--navy)}
+.login p{color:var(--muted);margin:0 0 20px}
+label{display:block;font-weight:700;margin:14px 0 6px;color:var(--navy);font-size:15px}
+input,select,textarea{width:100%;padding:10px 12px;border:2px solid var(--line);border-radius:8px;background:#fff}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue)}
+.hint{font-size:13px;color:var(--muted);margin-top:4px}
+.err{background:#fdecec;color:#9f1c13;padding:10px 12px;border-radius:8px;margin-top:14px;font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:22px}
+.stat{background:#fff;border-radius:12px;padding:16px 18px;box-shadow:0 2px 10px rgba(0,34,79,.08)}
+.stat b{display:block;font-size:30px;color:var(--navy)}
+.stat span{color:var(--muted)}
+.tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.tab{padding:8px 18px;border-radius:20px;border:2px solid var(--blue);background:#fff;color:var(--navy);font-weight:700;cursor:pointer}
+.tab.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.toolbar{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.toolbar input{flex:1;min-width:200px}
+.card{background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,34,79,.08);overflow:auto}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
+th{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:#f7fbfe}
+td img{width:44px;height:44px;border-radius:8px;object-fit:cover;background:var(--bg);display:block}
+td .sub{color:var(--muted);font-size:13px}
+td.act{white-space:nowrap;text-align:right}
+td.act .btn{margin-left:6px}
+.pill{display:inline-block;padding:2px 10px;border-radius:12px;font-size:13px;font-weight:700}
+.pill.ok{background:#e6f7ef;color:var(--ok)}.pill.no{background:#fdecec;color:var(--danger)}
+.empty{padding:40px;text-align:center;color:var(--muted)}
+.backdrop{position:fixed;inset:0;background:rgba(0,20,50,.55);display:flex;align-items:flex-start;justify-content:center;padding:24px 12px;overflow:auto;z-index:50}
+.modal{background:#fff;border-radius:16px;width:100%;max-width:640px;padding:26px;box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.modal h3{margin:0 0 4px;color:var(--navy);font-size:22px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}}
+.check{display:flex;align-items:center;gap:8px;margin-top:14px}
+.check input{width:auto}
+.seg{display:flex;gap:16px;margin:8px 0}
+.seg label{display:flex;align-items:center;gap:6px;margin:0;font-weight:400}
+.seg input{width:auto}
+.preview{margin-top:8px;width:96px;height:96px;border-radius:10px;object-fit:cover;background:var(--bg);border:1px solid var(--line)}
+details{margin-top:18px;background:#0d1b33;color:#d6e4ff;border-radius:10px;padding:10px 14px}
+summary{cursor:pointer;font-weight:700;color:var(--sky)}
+pre{margin:10px 0 0;white-space:pre-wrap;word-break:break-all;font-size:13px;font-family:ui-monospace,Menlo,Consolas,monospace}
+.foot{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--navy);color:#fff;padding:11px 20px;border-radius:24px;z-index:99;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+#toast.bad{background:var(--danger)}
+</style>
+</head>
+<body>
+
+<section id="loginView" class="login">
+  <h2>Medisync Admin</h2>
+  <p>Manage products and doctors through the API. Enter the <code>ADMIN_KEY</code> from the server's <code>.env</code>.</p>
+  <form id="loginForm">
+    <label for="key">Admin key</label>
+    <input id="key" type="password" autocomplete="current-password" required>
+    <div id="loginErr" class="err hidden" role="alert"></div>
+    <div class="foot"><button class="btn" id="loginBtn">Connect</button></div>
+  </form>
+</section>
+
+<div id="appView" class="hidden">
+  <header>
+    <h1>Medisync <span>Admin</span></h1>
+    <span id="apiBase" style="color:var(--sky);font-size:14px"></span>
+    <button class="btn ghost sm" id="logout">Log out</button>
+  </header>
+  <main>
+    <div class="stats" id="stats"></div>
+    <div class="tabs" id="tabs"></div>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Search...">
+      <button class="btn" id="addBtn">+ Add</button>
+    </div>
+    <div class="card" id="table"></div>
+  </main>
+</div>
+
+<div id="modalRoot"></div>
+<div id="toast" class="hidden" role="status"></div>
+
+<script>
+"use strict";
+const API = location.origin;            // the panel is served by the API itself
+let KEY = sessionStorage.getItem("medisync_admin_key") || "";
+let META = { frontendUrl: "", cloudinary: false };
+let tab = "products";
+let rows = [];
+
+const $ = (s, r = document) => r.querySelector(s);
+const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+// ---------- resource definitions ----------
+const RES = {
+  products: {
+    label: "Product", plural: "Products", endpoint: "/api/v1/admin/products",
+    fields: [
+      { n: "title", l: "Title", req: true },
+      { n: "description", l: "Description", t: "textarea", req: true },
+      { n: "price", l: "Price (what the customer pays)", t: "number", req: true, half: true },
+      { n: "discount", l: "Discount %", t: "number", half: true, ph: "0" },
+      { n: "category", l: "Category", ph: "Pain & Fever", half: true },
+      { n: "specifications", l: "Specifications", ph: "comma or new line separated", half: true },
+      { n: "storeName", l: "Store name", req: true, half: true },
+      { n: "storeId", l: "Store id", req: true, half: true },
+    ],
+    imageKey: "Product_Image",
+    columns: [
+      ["", (r) => img(r.Product_Image)],
+      ["Product", (r) => `<b>${esc(r.Product_Title)}</b><div class="sub">${esc(r.category || "")}</div>`],
+      ["Price", (r) => `$${esc(r.product_price)} <span class="sub">(${esc(r.product_Discount)} off)</span>`],
+      ["Store", (r) => esc(r.Product_available?.store_name)],
+    ],
+    toForm: (r) => ({ title: r.Product_Title, description: r.Product_description, price: r.product_price, discount: parseFloat(r.product_Discount) || 0, category: r.category, specifications: (r.product_specifications || []).join(", "), storeName: r.Product_available?.store_name, storeId: r.Product_available?.store_Id, image: r.Product_Image }),
+    search: (r) => [r.Product_Title, r.category, r.Product_available?.store_name].join(" "),
+  },
+  doctors: {
+    label: "Doctor", plural: "Doctors", endpoint: "/api/v1/admin/doctors",
+    fields: [
+      { n: "name", l: "Name", req: true, ph: "Dr. Jane Doe", half: true },
+      { n: "profile", l: "Specialty", req: true, ph: "Cardiologist", half: true },
+      { n: "doctorId", l: "Doctor id", req: true, ph: "DOC-2001", half: true },
+      { n: "address", l: "Address / city", req: true, half: true },
+      { n: "degrees", l: "Degrees", ph: "MBBS, MD (Cardiology)" },
+      { n: "available", l: "Available for booking", t: "checkbox", def: true },
+    ],
+    imageKey: "doctor_Image",
+    columns: [
+      ["", (r) => img(r.doctor_Image)],
+      ["Doctor", (r) => `<b>${esc(r.doctor_name)}</b><div class="sub">${esc(r.doctor_profile)} - ${esc(r.doctor_id)}</div>`],
+      ["Degrees", (r) => esc((r.doctor_degree || []).join(", "))],
+      ["Address", (r) => esc(r.doctor_address)],
+      ["Status", (r) => `<span class="pill ${r.Doctor_available ? "ok" : "no"}">${r.Doctor_available ? "Available" : "Unavailable"}</span>`],
+    ],
+    toForm: (r) => ({ name: r.doctor_name, profile: r.doctor_profile, doctorId: r.doctor_id, address: r.doctor_address, degrees: (r.doctor_degree || []).join(", "), available: r.Doctor_available, image: r.doctor_Image }),
+    search: (r) => [r.doctor_name, r.doctor_profile, r.doctor_id, r.doctor_address].join(" "),
+  },
+  users: {
+    label: "User", plural: "Users", endpoint: "/api/v1/admin/users", readOnly: true,
+    columns: [
+      ["", (r) => img(r.Image)],
+      ["User", (r) => `<b>${esc(r.name)}</b><div class="sub">${esc(r.email)}</div>`],
+      ["Phone", (r) => esc(r.phone || "-")],
+      ["Address", (r) => esc(r.address || "-")],
+      ["Joined", (r) => esc(r.createdAt ? new Date(r.createdAt).toLocaleDateString() : "-")],
+    ],
+    search: (r) => [r.name, r.email, r.phone, r.address].join(" "),
+  },
+};
+
+function imgSrc(u) {
+  if (!u) return "";
+  return u.startsWith("/") && META.frontendUrl ? META.frontendUrl.replace(/\/$/, "") + u : u;
+}
+const img = (u) => (u ? `<img src="${esc(imgSrc(u))}" alt="" loading="lazy">` : "");
+
+// ---------- API ----------
+async function api(method, path, body) {
+  const opts = { method, headers: { "x-admin-key": KEY } };
+  if (body instanceof FormData) opts.body = body;
+  else if (body) { opts.headers["Content-Type"] = "application/json"; opts.body = JSON.stringify(body); }
+  let res;
+  try { res = await fetch(API + path, opts); } catch { throw new Error("Can't reach the server."); }
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) { const e = new Error(data.message || `Request failed (${res.status})`); e.status = res.status; throw e; }
+  return data;
+}
+
+function toast(msg, bad) {
+  const t = $("#toast");
+  t.textContent = msg; t.className = bad ? "bad" : ""; clearTimeout(toast.t);
+  toast.t = setTimeout(() => t.classList.add("hidden"), 3200);
+}
+
+// ---------- login ----------
+async function connect(key) {
+  KEY = key;
+  META = await api("GET", "/api/v1/admin/check");
+  sessionStorage.setItem("medisync_admin_key", key);
+  $("#loginView").classList.add("hidden");
+  $("#appView").classList.remove("hidden");
+  $("#apiBase").textContent = API;
+  renderTabs(); loadStats(); load();
+}
+$("#loginForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  $("#loginErr").classList.add("hidden"); $("#loginBtn").disabled = true;
+  try { await connect($("#key").value); }
+  catch (err) { const el = $("#loginErr"); el.textContent = err.message; el.classList.remove("hidden"); }
+  finally { $("#loginBtn").disabled = false; }
+});
+$("#logout").addEventListener("click", () => { sessionStorage.removeItem("medisync_admin_key"); location.reload(); });
+
+// ---------- list ----------
+function renderTabs() {
+  $("#tabs").innerHTML = Object.entries(RES).map(([k, r]) => `<button class="tab ${k === tab ? "on" : ""}" data-tab="${k}">${r.plural}</button>`).join("");
+  const r = RES[tab];
+  $("#addBtn").classList.toggle("hidden", !!r.readOnly);
+  $("#addBtn").textContent = `+ Add ${r.label.toLowerCase()}`;
+}
+$("#tabs").addEventListener("click", (e) => { const b = e.target.closest("[data-tab]"); if (b) { tab = b.dataset.tab; $("#search").value = ""; renderTabs(); load(); } });
+$("#search").addEventListener("input", renderTable);
+$("#addBtn").addEventListener("click", () => openForm());
+
+async function loadStats() {
+  try {
+    const s = await api("GET", "/api/v1/admin/stats");
+    $("#stats").innerHTML = [["Products", s.products], ["Doctors", s.doctors], ["Users", s.users]].map(([l, n]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join("");
+  } catch (e) { $("#stats").innerHTML = ""; }
+}
+
+async function load() {
+  $("#table").innerHTML = `<div class="empty">Loading...</div>`;
+  try { rows = await api("GET", RES[tab].endpoint); renderTable(); }
+  catch (e) {
+    if (e.status === 403) return $("#logout").click();
+    $("#table").innerHTML = `<div class="empty">${esc(e.message)}</div>`;
+  }
+}
+
+function renderTable() {
+  const r = RES[tab], q = $("#search").value.trim().toLowerCase();
+  const list = rows.filter((x) => !q || r.search(x).toLowerCase().includes(q));
+  if (!list.length) { $("#table").innerHTML = `<div class="empty">${rows.length ? "No matches." : `No ${r.plural.toLowerCase()} yet.${r.readOnly ? "" : " Click Add to create the first one, or run <code>npm run seed</code>."}`}</div>`; return; }
+  const head = r.columns.map(([h]) => `<th>${esc(h)}</th>`).join("") + (r.readOnly ? "" : "<th></th>");
+  const body = list.map((x) => `<tr>${r.columns.map(([, f]) => `<td>${f(x)}</td>`).join("")}${r.readOnly ? "" : `<td class="act"><button class="btn ghost sm" data-edit="${esc(x._id)}">Edit</button><button class="btn danger sm" data-del="${esc(x._id)}">Delete</button></td>`}</tr>`).join("");
+  $("#table").innerHTML = `<table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`;
+}
+$("#table").addEventListener("click", async (e) => {
+  const ed = e.target.closest("[data-edit]"), del = e.target.closest("[data-del]");
+  if (ed) openForm(rows.find((x) => x._id === ed.dataset.edit));
+  if (del) {
+    const row = rows.find((x) => x._id === del.dataset.del);
+    if (!confirm(`Delete this ${RES[tab].label.toLowerCase()}? This can't be undone.`)) return;
+    try { await api("DELETE", `${RES[tab].endpoint}/${row._id}`); toast("Deleted"); load(); loadStats(); }
+    catch (err) { toast(err.message, true); }
+  }
+});
+
+// ---------- add / edit form ----------
+function openForm(row) {
+  const r = RES[tab], edit = !!row, v = edit ? r.toForm(row) : {};
+  const field = (f) => {
+    const val = v[f.n] ?? (f.def ?? "");
+    let input;
+    if (f.t === "textarea") input = `<textarea name="${f.n}" rows="3" ${f.req ? "required" : ""}>${esc(val)}</textarea>`;
+    else if (f.t === "checkbox") return `<label class="check"><input type="checkbox" name="${f.n}" ${val === "" || val ? "checked" : ""}> ${esc(f.l)}</label>`;
+    else input = `<input name="${f.n}" type="${f.t || "text"}" ${f.t === "number" ? 'step="0.01" min="0"' : ""} value="${esc(val)}" placeholder="${esc(f.ph || "")}" ${f.req ? "required" : ""}>`;
+    return `<div style="${f.half ? "" : "grid-column:1/-1"}"><label>${esc(f.l)}${f.req ? " *" : ""}</label>${input}</div>`;
+  };
+  $("#modalRoot").innerHTML = `
+  <div class="backdrop" id="bd"><form class="modal" id="form" autocomplete="off">
+    <h3>${edit ? "Edit" : "Add"} ${r.label.toLowerCase()}</h3>
+    <div class="hint">${edit ? "Only changed values are needed; the image stays unless you replace it." : "Fields marked * are required."}</div>
+    <div class="grid2">${r.fields.map(field).join("")}</div>
+    <label>Image</label>
+    <div class="seg">
+      <label><input type="radio" name="imode" value="url" checked> URL / path</label>
+      <label><input type="radio" name="imode" value="file" ${META.cloudinary ? "" : "disabled"}> Upload file ${META.cloudinary ? "" : "(needs Cloudinary)"}</label>
+    </div>
+    <input id="imgUrl" name="image" value="${esc(v.image || "")}" placeholder="https://... or /images/products/paracetamol.svg">
+    <input id="imgFile" type="file" accept="image/png,image/jpeg,image/webp" class="hidden">
+    <img id="imgPrev" class="preview ${v.image ? "" : "hidden"}" alt="" src="${esc(imgSrc(v.image))}">
+    <div id="formErr" class="err hidden" role="alert"></div>
+    <details open><summary>API request</summary><pre id="reqPrev"></pre></details>
+    <div class="foot"><button type="button" class="btn ghost" id="cancel">Cancel</button><button class="btn" id="save">${edit ? "Save changes" : `Add ${r.label.toLowerCase()}`}</button></div>
+  </form></div>`;
+
+  const form = $("#form");
+  const close = () => ($("#modalRoot").innerHTML = "");
+  $("#cancel").onclick = close;
+  $("#bd").addEventListener("mousedown", (e) => e.target.id === "bd" && close());
+
+  const fileMode = () => form.elements.imode.value === "file";
+  const collect = () => {
+    const o = {};
+    r.fields.forEach((f) => { const el = form.elements[f.n]; o[f.n] = f.t === "checkbox" ? el.checked : el.value; });
+    return o;
+  };
+  const method = edit ? "PUT" : "POST";
+  const url = r.endpoint + (edit ? `/${row._id}` : "");
+  const buildBody = () => {
+    const data = collect();
+    if (fileMode() && $("#imgFile").files[0]) {
+      const fd = new FormData();
+      Object.entries(data).forEach(([k, val]) => fd.append(k, val));
+      fd.append("image", $("#imgFile").files[0]);
+      return fd;
+    }
+    if ($("#imgUrl").value.trim()) data.image = $("#imgUrl").value.trim();
+    return data;
+  };
+  const showReq = () => {
+    const b = buildBody();
+    let curl;
+    if (b instanceof FormData) {
+      curl = [...b.entries()].map(([k, val]) => (val instanceof File ? `  -F "${k}=@${val.name}"` : `  -F ${JSON.stringify(`${k}=${val}`)}`)).join(" \\\n");
+    } else curl = `  -H "Content-Type: application/json" \\\n  -d '${JSON.stringify(b).replace(/'/g, "'\\''")}'`;
+    $("#reqPrev").textContent = `${method} ${API}${url}\nx-admin-key: <ADMIN_KEY>\n\ncurl -X ${method} "${API}${url}" \\\n  -H "x-admin-key: <ADMIN_KEY>" \\\n${curl}`;
+  };
+  const syncMode = () => {
+    $("#imgUrl").classList.toggle("hidden", fileMode()); $("#imgFile").classList.toggle("hidden", !fileMode());
+  };
+  form.addEventListener("input", () => {
+    syncMode();
+    const src = fileMode() && $("#imgFile").files[0] ? URL.createObjectURL($("#imgFile").files[0]) : imgSrc($("#imgUrl").value.trim());
+    $("#imgPrev").src = src; $("#imgPrev").classList.toggle("hidden", !src);
+    showReq();
+  });
+  syncMode(); showReq();
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    $("#formErr").classList.add("hidden"); $("#save").disabled = true;
+    try {
+      await api(method, url, buildBody());
+      close(); toast(edit ? "Saved" : "Added"); load(); loadStats();
+    } catch (err) { const el = $("#formErr"); el.textContent = err.message; el.classList.remove("hidden"); }
+    finally { const s = $("#save"); if (s) s.disabled = false; }
+  });
+}
+
+// auto-connect when the key is still in this tab's session
+if (KEY) connect(KEY).catch(() => { sessionStorage.removeItem("medisync_admin_key"); });
+</script>
+</body>
+</html>

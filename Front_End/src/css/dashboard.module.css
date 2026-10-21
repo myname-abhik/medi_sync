@@ -1,0 +1,165 @@
+.dashboard{
+    width: 100%;
+    height: fit-content;
+
+    background-color: var(--background-light-color);
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.dashbaordCard{
+    width: 90%;
+    /* height: 100vh; */
+    background: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0000005e;
+    /* margin-top: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+    flex-direction: column;
+    /* padding-top: 50px; */
+}
+.top{
+    width: 100%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 30px;
+
+}
+.edit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--font-light-color);
+    /* background-color: var(--background-light-color); */
+}
+.edit.active{
+    color: var(--font-dark-color-2);
+}
+.bottom{
+    width: 100%;
+    /* height: 100vh; */
+    /* background: var(--white-color); */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0 10px #0000005e; */
+    /* margin-top: 50px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    /* padding: 20px; */
+    gap: 30px;
+    /* padding-top: 50px; */
+    /* background-color: red; */
+}
+/* ========= left ========= */
+
+.left{
+    width: 30%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.profilePic{
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    /* border: 2px solid var(--primary-dark-color); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.avatar{
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-dark-color);
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    visibility: hidden;
+    /* transition: var(--transition); */
+}
+.profilePic:hover .avatar{
+    visibility: visible;
+    
+
+}
+.profilePic img{
+    /* width: 100%;
+    height: 100%; */
+    transform: scale(1.1);
+    object-fit: cover;
+    cursor: pointer;
+}
+/* ========= right ========= */
+
+.right{
+    width: 70%;
+    /* background-color: green; */
+    /* padding: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+.inputSection{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    width: 100%;
+}
+.inputSection label{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--font-light-color);
+}
+.inputSection input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--font-light-color);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #e7e7e7;
+    color: #222222;
+    outline: none;
+}
+
+/* ========= Dashboard ( RESPONSIVE ) ========= */
+
+.status{ margin: 10px 20px 0; padding: 10px 14px; border-radius: 8px; font-size: 16px; }
+.status.ok{ background: #e6f7ef; color: #11603a; }
+.status.bad{ background: #fdecec; color: #9f1c13; }
+.edit{ cursor: pointer; }
+.edit:not(.active){ opacity: .55; cursor: default; }

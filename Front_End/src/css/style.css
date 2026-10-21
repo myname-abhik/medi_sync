@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Maven Pro", sans-serif;
+}
+:root{
+    --primary-color: #3DBDEC;
+    --primary-dark-color: #00224F;
+    --secondary-color: #85dbfa;
+    --background-dark-color: #10121A;
+    --background-dark-grey: #191D2B;
+    --border-color: #1e6ace;
+    --background-light-color: #f1fbff;
+    --white-color: #FFF;
+    --black-color: #111;
+    --font-light-color: #a4acc4;
+    --font-dark-color: #2986a8;
+    --font-dark-color-2: #00224F;
+    --sidebar-dark-color: #191D2B;
+    --scrollbar-bg-color: #383838;
+    --scrollbar-thump-color: #6b6b6b;
+    --scrollbar-track-color: #383838;
+    --button-font-size: 22px;
+    --transition: all 0.2s ease;
+}
+
+

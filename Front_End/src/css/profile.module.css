@@ -1,0 +1,84 @@
+.profile {
+  position: relative;
+}
+.profileImgWrapper {
+  /* background-color: red; */
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.profileImgWrapper img {
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+}
+
+.dropDownMenu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: var(--background-light-color);
+  box-shadow: 0px 1px 8px #00000063;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  /* display: none; */
+  overflow: hidden;
+}
+.dropDownMenuItem {
+  list-style: none;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 50px;
+  /* background-color: var(--primary-color); */
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  font-size: 22px;
+  color: var(--font-dark-color-2);
+  font-weight: 500;
+}
+.dropDownMenuItem:hover {
+  background-color: var(--secondary-color);
+}
+
+.dropDownMenu.active {
+  display: block;
+}
+
+.dropDownMenu.inactive {
+  display: none;
+}
+
+/* ---- unread / cart indicators ---- */
+.profileImgWrapper { position: relative; }
+.dot {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e5484d;
+  border: 2px solid #fff;
+}
+.badge {
+  margin-left: auto;
+  min-width: 22px;
+  padding: 0 7px;
+  border-radius: 11px;
+  background: var(--primary-dark-color);
+  color: #fff;
+  font-size: 13px;
+  line-height: 22px;
+  text-align: center;
+}

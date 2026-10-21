@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="eye drops"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8f6fd"/><stop offset="1" stop-color="#cdeafa"/></linearGradient></defs><rect width="400" height="400" fill="url(#bg)"/><ellipse cx="200" cy="338" rx="125" ry="13" fill="#00224F" opacity=".13"/><path d="M184 70 h32 l6 50 h-44z" fill="#3DBDEC"/><rect x="172" y="116" width="56" height="22" rx="6" fill="#00224F"/>
+<rect x="156" y="136" width="88" height="190" rx="22" fill="#e9f7ff" stroke="#3DBDEC" stroke-width="4"/><rect x="156" y="198" width="88" height="86" fill="#fff"/>
+<ellipse cx="200" cy="232" rx="22" ry="14" fill="none" stroke="#00224F" stroke-width="4"/><circle cx="200" cy="232" r="6" fill="#00224F"/>
+<text x="200" y="272" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#00224F">EYE DROPS</text>
+<path d="M200 38 q-9 14 -9 21 a9 9 0 0 0 18 0 q0 -7 -9 -21z" fill="#85dbfa"/></svg>
