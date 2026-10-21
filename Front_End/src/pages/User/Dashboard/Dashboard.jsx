@@ -8,7 +8,7 @@ import { startSession } from "../../../services/session";
 import { COOKIE_OPTS } from "../../../config";
 
 const FIELDS = ["name", "email", "phone", "address"];
-const MAX_IMAGE_MB = 5;
+const MAX_IMAGE_MB = 4; // Vercel rejects request bodies over 4.5 MB
 
 const Dashboard = () => {
   const dispatch = useDispatch();

@@ -44,6 +44,25 @@ npm run dev              # http://localhost:8000
 
 Nothing to change in the frontend: as soon as the backend is up and the page is refreshed, the website uses it. If `CLIENT_ORIGIN` is set in `Backend/.env`, it must match the exact address of the website (including the port), otherwise the browser blocks the check and the site stays in static mode.
 
+## Deploying on Vercel
+
+Two separate Vercel projects from the same repository:
+
+**1. Backend** (Root Directory `Backend`)
+- Environment variables (Settings > Environment Variables, tick Production): `MONGO_URI`, `JWT_SECRET`, `ADMIN_KEY`, optionally `CLOUDINARY_*`, `CLIENT_ORIGIN` (your website's exact address, no trailing slash) and `FRONTEND_URL`. Changes only apply after a **redeploy**.
+- MongoDB Atlas > Network Access must allow `0.0.0.0/0` (Vercel's IP addresses change).
+- Check it: open the project's address. `{"db":true}` means it works; if `db` is false a `hint` explains why.
+
+**2. Website** (Root Directory `Front_End`)
+- Environment variable `VITE_API_URL=https://YOUR-BACKEND.vercel.app/` (with the trailing slash). Leave `VITE_USE_STATIC` unset.
+
+How the backend stays reliable on serverless hosting:
+- Requests wait for one shared, cached database connection; if the database is unavailable the API answers at once with a 503 and a reason instead of hanging until Vercel times the function out.
+- Short connection timeouts (5 s) and a small connection pool; failed connections are retried at most every 10 s.
+- Uploads are limited to 4 MB (Vercel rejects request bodies over 4.5 MB) and return a clean 413.
+- Unhandled promise rejections are logged instead of ending the instance. The website itself falls back to its built-in data whenever the API reports an error.
+- The first request after a long idle period is slower (cold start). The website waits up to 5 s before using the built-in data for that page load.
+
 ## Admin panel (add data through API requests)
 
 With the backend running, open **http://localhost:8000/admin** and enter the `ADMIN_KEY` from `Backend/.env`.

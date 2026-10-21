@@ -21,7 +21,7 @@ export const checkApi = () => {
   if (cache && Date.now() - cache.at < TTL_MS) return Promise.resolve(cache.value);
   if (!inflight) {
     inflight = axios
-      .get(API_URL, { timeout: 2000 })
+      .get(API_URL, { timeout: 5000 })
       .then((res) => res.status === 200 && res.data?.db !== false)
       .catch(() => false)
       .then((value) => {
